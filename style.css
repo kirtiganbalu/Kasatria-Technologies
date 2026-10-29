@@ -145,8 +145,8 @@ body {
 
 #legend {
   position: absolute;
-  bottom: 20px;
-  right: 10%;
+  bottom: 22px;
+  right: 2%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
