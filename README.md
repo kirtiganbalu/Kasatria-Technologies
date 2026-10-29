@@ -1,4 +1,4 @@
-# 3D People Visualization
+# Three.js Data Visualization
 
 This is my preliminary assignment for Kasatria (Junior Software Developer). It is based on the three.js `css3d_periodictable` demo. After logging in with Google, the page reads people data from a Google Sheet and shows each person as a 3D tile.
 
