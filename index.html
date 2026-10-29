@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Three.js Data Visualization</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <!-- Login page (Image A) -->
+    <div id="login">
+      <div class="login-card">
+        <h1>Welcome Back</h1>
+        <p>Sign in with your Google account to view the data.</p>
+        <button id="signin" type="button">
+          <span class="g-logo" aria-hidden="true">G</span>
+          <span>Sign in with Google</span>
+        </button>
+        <div id="login-error" role="alert"></div>
+      </div>
+    </div>
+
+    <!-- App UI: hidden until signed in -->
+    <div id="app" class="hidden">
+      <div id="user">
+        <span id="user-name"></span>
+        <button id="signout" type="button">Sign out</button>
+      </div>
+
+      <div id="status" role="status"></div>
+
+      <div id="legend">
+        <span>LOW</span>
+        <div class="color-bar"></div>
+        <span>HIGH</span>
+      </div>
+
+      <div id="menu">
+        <button id="table" type="button">Table</button>
+        <button id="sphere" type="button">Sphere</button>
+        <button id="helix" type="button">Helix</button>
+        <button id="grid" type="button">Grid</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/renderers/CSS3DRenderer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

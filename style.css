@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Login page (Image A) ---------- */
+#login {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f5f7;
+}
+
+.login-card {
+  width: min(440px, 90vw);
+  padding: 48px 32px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.login-card h1 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #333;
+}
+.login-card p {
+  margin: 0 0 32px;
+  font-size: 12px;
+  color: #666;
+}
+
+#signin {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px 8px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: #4a84f0;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+#signin:hover {
+  background: #3b74de;
+}
+#signin:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.g-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+  background: #fff;
+  color: #4285f4;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#login-error {
+  margin-top: 16px;
+  min-height: 16px;
+  font-size: 12px;
+  color: #c62828;
+}
+
+/* ---------- App chrome ---------- */
+#menu {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+#menu button,
+#signout {
+  color: rgba(127, 255, 255, 0.75);
+  background: transparent;
+  outline: 1px solid rgba(127, 255, 255, 0.75);
+  border: 0;
+  padding: 8px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+#menu button:hover,
+#signout:hover {
+  background-color: rgba(0, 255, 255, 0.3);
+}
+#menu button.active {
+  background-color: rgba(0, 255, 255, 0.3);
+  color: #fff;
+}
+
+#user {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+}
+#user-name {
+  margin-right: 8px;
+}
+
+#status {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: rgba(127, 255, 255, 0.85);
+  font-size: 14px;
+  z-index: 10;
+  pointer-events: none;
+}
+#status.error {
+  color: #ff6b6b;
+}
+
+#legend {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border: 1px solid #ef3022;
+  z-index: 10;
+}
+
+.color-bar {
+  width: 200px;
+  height: 10px;
+  background: linear-gradient(to right, #ef3022, #f7941d, #3a9f48);
+  border: 1px solid #fff;
+}
+
+/* ---------- Tiles (Image B) ---------- */
+.element {
+  position: relative;
+  width: 140px;
+  height: 180px;
+  padding: 24px 10px 10px;
+  text-align: center;
+  color: #fff;
+  border: 2px solid var(--tier);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), var(--tier-bg);
+  box-shadow: 0 0 12px var(--tier);
+  cursor: default;
+  user-select: none;
+}
+
+.element.red {
+  --tier: #ef3022;
+  --tier-bg: rgba(239, 48, 34, 0.65);
+}
+.element.orange {
+  --tier: #f7941d;
+  --tier-bg: rgba(247, 148, 29, 0.65);
+}
+.element.green {
+  --tier: #3a9f48;
+  --tier-bg: rgba(58, 159, 72, 0.65);
+}
+
+.element .country,
+.element .age {
+  position: absolute;
+  top: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.element .country {
+  left: 8px;
+}
+.element .age {
+  right: 8px;
+}
+
+.element img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 8px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: #222;
+}
+
+.element .name {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.element .interest {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.85);
+}
